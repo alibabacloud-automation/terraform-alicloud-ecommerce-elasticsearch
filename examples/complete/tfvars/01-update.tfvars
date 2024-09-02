@@ -8,7 +8,6 @@ security_group_name = "update-tf-testacc-sec"
 ecs_name             = "update-tf-testacc-ecs"
 internet_charge_type = "PayByTraffic"
 ecs_password         = "YourPassword123!update"
-system_disk_size     = 120
 
 #alicloud_eip_address
 name = "update-tf-testacc-eip"

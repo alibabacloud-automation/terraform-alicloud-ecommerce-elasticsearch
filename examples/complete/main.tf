@@ -64,7 +64,7 @@ module "example" {
   #alicloud_db_instance
   engine               = "MySQL"
   engine_version       = "5.7"
-  instance_type        = data.alicloud_db_instance_classes.default.instance_classes.0.instance_class
+  instance_type        = data.alicloud_db_instance_classes.default.instance_classes.1.instance_class
   instance_storage     = var.instance_storage
   instance_charge_type = var.instance_charge_type
   rds_zone_id          = data.alicloud_db_zones.default.zones.0.id
