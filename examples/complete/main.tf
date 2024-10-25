@@ -1,6 +1,9 @@
 data "alicloud_db_zones" "default" {
-  engine         = "MySQL"
-  engine_version = "5.7"
+  engine                   = "MySQL"
+  engine_version           = "8.0"
+  instance_charge_type     = "PostPaid"
+  category                 = "Basic"
+  db_instance_storage_type = "cloud_essd"
 }
 
 data "alicloud_images" "default" {
@@ -8,12 +11,16 @@ data "alicloud_images" "default" {
 }
 
 data "alicloud_instance_types" "default" {
-  availability_zone = data.alicloud_db_zones.default.zones.0.id
+  availability_zone = data.alicloud_db_zones.default.zones[0].id
 }
 
 data "alicloud_db_instance_classes" "default" {
-  engine         = "MySQL"
-  engine_version = "5.7"
+  zone_id                  = data.alicloud_db_zones.default.zones[0].id
+  engine                   = "MySQL"
+  engine_version           = "8.0"
+  category                 = "Basic"
+  db_instance_storage_type = "cloud_essd"
+  instance_charge_type     = "PostPaid"
 }
 
 module "example" {
@@ -25,7 +32,7 @@ module "example" {
 
   #alicloud_vswitch
   cidr_blocks        = ["172.16.0.0/21"]
-  availability_zones = [data.alicloud_db_zones.default.zones.0.id]
+  availability_zones = [data.alicloud_db_zones.default.zones[0].id]
 
   #alicloud_security_group
   security_group_name = var.security_group_name
@@ -45,9 +52,9 @@ module "example" {
   ecs_count = 1
 
   ecs_name                   = var.ecs_name
-  image_id                   = data.alicloud_images.default.images.0.id
-  ecs_type                   = data.alicloud_instance_types.default.instance_types.0.id
-  availability_zone          = data.alicloud_db_zones.default.zones.0.id
+  image_id                   = data.alicloud_images.default.images[0].id
+  ecs_type                   = data.alicloud_instance_types.default.instance_types[0].id
+  availability_zone          = data.alicloud_db_zones.default.zones[0].id
   internet_charge_type       = var.internet_charge_type
   internet_max_bandwidth_out = 0
   ecs_password               = var.ecs_password
@@ -63,11 +70,12 @@ module "example" {
 
   #alicloud_db_instance
   engine               = "MySQL"
-  engine_version       = "5.7"
-  instance_type        = data.alicloud_db_instance_classes.default.instance_classes.1.instance_class
+  engine_version       = "8.0"
+  instance_type        = data.alicloud_db_instance_classes.default.instance_classes[1].instance_class
   instance_storage     = var.instance_storage
   instance_charge_type = var.instance_charge_type
-  rds_zone_id          = data.alicloud_db_zones.default.zones.0.id
+  db_storage_type      = "cloud_essd"
+  rds_zone_id          = data.alicloud_db_zones.default.zones[0].id
 
   #alicloud_db_account
   rds_account_name = "tf_rds_account"
