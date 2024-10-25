@@ -68,8 +68,8 @@ resource "alicloud_instance" "instance" {
   image_id                   = var.image_id
   instance_type              = var.ecs_type
   availability_zone          = var.availability_zone
-  vswitch_id                 = element(split(",", join(",", alicloud_vswitch.vswitch.*.id)), 1)
-  security_groups            = alicloud_security_group.group.*.id
+  vswitch_id                 = element(split(",", join(",", alicloud_vswitch.vswitch[*].id)), 1)
+  security_groups            = alicloud_security_group.group[*].id
   internet_charge_type       = var.internet_charge_type
   internet_max_bandwidth_out = var.internet_max_bandwidth_out
   password                   = var.ecs_password
@@ -93,14 +93,15 @@ resource "alicloud_eip_association" "eip_asso" {
 
 # RDS
 resource "alicloud_db_instance" "rds" {
-  engine               = var.engine
-  engine_version       = var.engine_version
-  instance_type        = var.instance_type
-  instance_storage     = var.instance_storage
-  instance_charge_type = var.instance_charge_type
-  zone_id              = var.rds_zone_id
-  vswitch_id           = element(split(",", join(",", alicloud_vswitch.vswitch.*.id)), 1)
-  security_ips         = [alicloud_vpc.vpc.cidr_block]
+  engine                   = var.engine
+  engine_version           = var.engine_version
+  instance_type            = var.instance_type
+  instance_storage         = var.instance_storage
+  instance_charge_type     = var.instance_charge_type
+  db_instance_storage_type = var.db_storage_type
+  zone_id                  = var.rds_zone_id
+  vswitch_id               = element(split(",", join(",", alicloud_vswitch.vswitch[*].id)), 1)
+  security_ips             = [alicloud_vpc.vpc.cidr_block]
 }
 
 resource "alicloud_db_account" "account" {
@@ -120,5 +121,5 @@ resource "alicloud_db_account_privilege" "privilege" {
   instance_id  = alicloud_db_instance.rds.id
   account_name = alicloud_db_account.account.account_name
   privilege    = var.db_privilege
-  db_names     = alicloud_db_database.db.*.name
+  db_names     = alicloud_db_database.db[*].name
 }

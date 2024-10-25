@@ -209,6 +209,12 @@ variable "instance_charge_type" {
   default     = "Postpaid"
 }
 
+variable "db_storage_type" {
+  description = "The DB instance storage type."
+  type        = string
+  default     = "cloud_essd"
+}
+
 variable "rds_zone_id" {
   description = "The Zone to launch the DB instance."
   type        = string
@@ -254,14 +260,3 @@ variable "db_privilege" {
   default     = "ReadWrite"
 }
 
-variable "disk_size" {
-  description = "The specification of the disk size."
-  type        = number
-  default     = 100
-}
-
-variable "region" {
-  description = "The region used to launch this module resources."
-  type        = string
-  default     = ""
-}
