@@ -1,3 +1,8 @@
+## 1.3.0 (Unreleased)
+## 1.2.1 (2025-03-14)
+
+- examples/complete: improve the examples [GH-7](https://github.com/alibabacloud-automation/terraform-alicloud-ecommerce-elasticsearch/pull/7)
+
 ## 1.2.0 (2024-10-25)
 
 - module/alicloud_db_instance: support attribute db_instance_storage_type; examples: improve the examples [GH-6](https://github.com/alibabacloud-automation/terraform-alicloud-ecommerce-elasticsearch/pull/6)
