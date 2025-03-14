@@ -12,9 +12,9 @@ resource "alicloud_vswitch" "vswitch" {
 
 # Security Group
 resource "alicloud_security_group" "group" {
-  name        = var.security_group_name
-  vpc_id      = alicloud_vpc.vpc.id
-  description = var.description
+  security_group_name = var.security_group_name
+  vpc_id              = alicloud_vpc.vpc.id
+  description         = var.description
 }
 
 resource "alicloud_security_group_rule" "rdp" {
