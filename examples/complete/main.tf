@@ -1,3 +1,7 @@
+provider "alicloud" {
+  region = "ap-southeast-5"
+}
+
 data "alicloud_db_zones" "default" {
   engine                   = "MySQL"
   engine_version           = "8.0"
@@ -7,14 +11,16 @@ data "alicloud_db_zones" "default" {
 }
 
 data "alicloud_images" "default" {
-  name_regex = "^centos_6"
+  instance_type = data.alicloud_instance_types.default.instance_types[0].id
+  owners        = "system"
+  most_recent   = true
 }
 
 data "alicloud_instance_types" "default" {
   availability_zone    = data.alicloud_db_zones.default.zones[0].id
   cpu_core_count       = 2
   memory_size          = 8
-  instance_type_family = "ecs.g6"
+  instance_type_family = "ecs.g9i"
 }
 
 data "alicloud_db_instance_classes" "default" {
@@ -62,7 +68,7 @@ module "example" {
   internet_max_bandwidth_out = 0
   ecs_password               = var.ecs_password
   ecs_charge_type            = var.ecs_charge_type
-  disk_category              = "cloud_efficiency"
+  disk_category              = "cloud_essd"
   system_disk_size           = var.system_disk_size
 
   #alicloud_eip_address
@@ -74,6 +80,7 @@ module "example" {
   #alicloud_db_instance
   engine               = "MySQL"
   engine_version       = "8.0"
+  category             = "Basic"
   instance_type        = data.alicloud_db_instance_classes.default.instance_classes[1].instance_class
   instance_storage     = var.instance_storage
   instance_charge_type = var.instance_charge_type

@@ -1,4 +1,3 @@
-## 1.3.0 (Unreleased)
 ## 1.2.1 (2025-03-14)
 
 - examples/complete: improve the examples [GH-7](https://github.com/alibabacloud-automation/terraform-alicloud-ecommerce-elasticsearch/pull/7)
