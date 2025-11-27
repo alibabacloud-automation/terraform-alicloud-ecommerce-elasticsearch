@@ -1,3 +1,5 @@
+## [1.2.2](https://github.com/alibabacloud-automation/terraform-alicloud-ecommerce-elasticsearch/compare/v1.2.1...v1.2.2) (2025-11-27)
+
 ## 1.3.0 (Unreleased)
 ## 1.2.1 (2025-03-14)
 
