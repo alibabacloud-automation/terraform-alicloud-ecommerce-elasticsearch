@@ -209,6 +209,12 @@ variable "instance_charge_type" {
   default     = "Postpaid"
 }
 
+variable "category" {
+  description = "The category of the rds instance."
+  type        = string
+  default     = null
+}
+
 variable "db_storage_type" {
   description = "The DB instance storage type."
   type        = string

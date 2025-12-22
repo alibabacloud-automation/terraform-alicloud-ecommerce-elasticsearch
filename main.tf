@@ -98,6 +98,7 @@ resource "alicloud_db_instance" "rds" {
   instance_type            = var.instance_type
   instance_storage         = var.instance_storage
   instance_charge_type     = var.instance_charge_type
+  category                 = var.category
   db_instance_storage_type = var.db_storage_type
   zone_id                  = var.rds_zone_id
   vswitch_id               = element(split(",", join(",", alicloud_vswitch.vswitch[*].id)), 1)
