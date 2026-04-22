@@ -34,12 +34,13 @@ module "example" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | >= 1.200.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_alicloud"></a> [alicloud](#provider\_alicloud) | n/a |
+| <a name="provider_alicloud"></a> [alicloud](#provider\_alicloud) | >= 1.200.0 |
 
 ## Modules
 
@@ -49,20 +50,20 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [alicloud_db_account.account](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/db_account) | resource |
-| [alicloud_db_account_privilege.privilege](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/db_account_privilege) | resource |
-| [alicloud_db_database.db](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/db_database) | resource |
-| [alicloud_db_instance.rds](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/db_instance) | resource |
-| [alicloud_eip_address.eip](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/eip_address) | resource |
-| [alicloud_eip_association.eip_asso](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/eip_association) | resource |
-| [alicloud_instance.instance](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/instance) | resource |
-| [alicloud_security_group.group](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/security_group) | resource |
-| [alicloud_security_group_rule.http](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/security_group_rule) | resource |
-| [alicloud_security_group_rule.icmp](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/security_group_rule) | resource |
-| [alicloud_security_group_rule.rdp](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/security_group_rule) | resource |
-| [alicloud_security_group_rule.ssh](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/security_group_rule) | resource |
-| [alicloud_vpc.vpc](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/vpc) | resource |
-| [alicloud_vswitch.vswitch](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/vswitch) | resource |
+| [alicloud_db_account.account](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/db_account) | resource |
+| [alicloud_db_account_privilege.privilege](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/db_account_privilege) | resource |
+| [alicloud_db_database.db](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/db_database) | resource |
+| [alicloud_db_instance.rds](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/db_instance) | resource |
+| [alicloud_eip_address.eip](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/eip_address) | resource |
+| [alicloud_eip_association.eip_asso](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/eip_association) | resource |
+| [alicloud_instance.instance](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/instance) | resource |
+| [alicloud_security_group.group](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/security_group) | resource |
+| [alicloud_security_group_rule.http](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/security_group_rule) | resource |
+| [alicloud_security_group_rule.icmp](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/security_group_rule) | resource |
+| [alicloud_security_group_rule.rdp](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/security_group_rule) | resource |
+| [alicloud_security_group_rule.ssh](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/security_group_rule) | resource |
+| [alicloud_vpc.vpc](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/vpc) | resource |
+| [alicloud_vswitch.vswitch](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/vswitch) | resource |
 
 ## Inputs
 
