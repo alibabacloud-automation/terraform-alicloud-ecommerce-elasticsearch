@@ -1,3 +1,14 @@
+## [2.0.0](https://github.com/alibabacloud-automation/terraform-alicloud-ecommerce-elasticsearch/compare/v1.2.2...v2.0.0) (2026-04-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* add provider version constraint for aliyun/alicloud
+
+### Features
+
+* add provider version constraint for aliyun/alicloud ([c380acb](https://github.com/alibabacloud-automation/terraform-alicloud-ecommerce-elasticsearch/commit/c380acbf9665203b3459acf358fb2a0550af45cc))
+
 ## [1.2.2](https://github.com/alibabacloud-automation/terraform-alicloud-ecommerce-elasticsearch/compare/v1.2.1...v1.2.2) (2025-11-27)
 
 ## 1.3.0 (Unreleased)
